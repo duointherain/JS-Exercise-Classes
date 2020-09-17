@@ -42,28 +42,47 @@ class Airplane {
 console.log('*** Task One ***');
 
 
-
 class Person{
   constructor(attributes){
     this.name = attributes.name;
     this.age = attributes.age;
+    this.stomach = [];
   
-    
-    
+  } //constructor 
+  eat(someFood){
+    if(this.stomach.length < 10){
+      this.stomach.push(someFood);
+  } // if
+}//eat
+
+  poop(){
+    this.stomach = ['I am hungry'];
+  }// poop
+  
+  info(){
+    console.log(pilot1.name.toString() , pilot1.age.toString());
+
   }
-  job(){
-    return `${this.name} is a ${this.age}`;
-  }
-}
+}// class
+
+
 
 const pilot1 = new Person({
   name: 'Heero',
   age: '15',
-  work: 'Computer Programmer',
+  
 });
+pilot1.eat('🍍');
+pilot1.eat('rice');
+console.log(pilot1.name);
+console.log(pilot1.stomach);
+pilot1.poop();
+console.log(pilot1.stomach);
+//var res = str.toString();
+//console.log(`${pilot1.name} , ${pilot1.age}`);
+pilot1.info();
 
 
-console.log(pilot1.job());
   
 /*
   TASK 2
