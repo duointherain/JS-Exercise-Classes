@@ -89,18 +89,71 @@ pilot1.info();
     - Write a Car class whose constructor initializes `model` and `milesPerGallon` from arguments.
     - All instances built with Car:
         + should initialize with a `tank` at 0
-        + should initialize with an `odometer` at 0
-    - Give cars the ability to get fueled with a `.fill(gallons)` method. Add the gallons to `tank`.
+        + should initialize with an `odometer` at 0 <done>
+    - Give cars the ability to get fueled with a `.fill(gallons)` method. Add the gallons to `tank`. <done
     - Give cars ability to `.drive(distance)`. The distance driven:
         + Should cause the `odometer` to go up.
         + Should cause the the `tank` to go down taking `milesPerGallon` into account.
     - A car which runs out of `fuel` while driving can't drive any more distance:
         + The `drive` method should return a string "I ran out of fuel at x miles!" x being `odometer`.
 */
+console.log('*** Task Two ***')
+class car{
+  constructor(attributes){
+    this.model = attributes.model;
+    this.mpg = attributes.mpg;
+    this.tank = 0;
+    this.odometer = 0;
+  
+  } //constructor 
+  fill(gallons){
+      this.tank += gallons;
+  
+}//fill
 
-// class Car {
+  drive(miles){
+    this.tank = (this.tank - (this.mpg/miles));
+    this.odometer += miles;
+    if (this.tank <= 0){
+      console.log(` ${this.model} ran out of fuel at ${this.odometer} miles!`)
+    }// if
+  }// drive
+  
+  
+}// class
 
-// }
+const wingZero = new car({
+  name: 'WingZero',
+  mpg: '30',
+  
+});
+console.log(wingZero.odometer);
+console.log('We fill the tank')
+wingZero.fill(100);
+console.log(wingZero.tank);
+
+wingZero.drive(1);
+console.log('now we drive')
+
+console.log('now we have in our tank')
+console.log(wingZero.tank);
+
+console.log(`the odometer reads ${wingZero.odometer}`);
+
+// pilot1.eat('rice');
+// console.log(pilot1.name);
+// console.log(pilot1.stomach);
+// pilot1.poop();
+// console.log(pilot1.stomach);
+
+// pilot1.info();
+
+
+
+
+
+
+
 
 /*
   TASK 3
