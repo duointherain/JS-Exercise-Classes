@@ -133,24 +133,12 @@ wingZero.fill(100);
 console.log(wingZero.tank);
 
 wingZero.drive(1);
-console.log('now we drive')
+console.log(`Now we drive`)
 
 console.log('now we have in our tank')
 console.log(wingZero.tank);
 
 console.log(`the odometer reads ${wingZero.odometer}`);
-
-// pilot1.eat('rice');
-// console.log(pilot1.name);
-// console.log(pilot1.stomach);
-// pilot1.poop();
-// console.log(pilot1.stomach);
-
-// pilot1.info();
-
-
-
-
 
 
 
@@ -167,11 +155,29 @@ console.log(`the odometer reads ${wingZero.odometer}`);
         + Speaking should return a phrase `Hello my name is {name}, I am from {location}`.
         + {name} and {location} of course come from the instance's own properties.
 */
-// class Lambdasian {
 
-// }
+class Lambdasian{
+  constructor(attributes){
+    this.name = attributes.name;
+    this.age = attributes.age;
+    this.location = attributes.location;
+  
+  } //constructor 
 
-/*
+  speak(){
+    console.log(`Hello my name is ${this.name} , I am from ${location}`);
+  }// speak
+}
+
+
+
+
+
+
+
+
+
+  /*
   TASK 4
     - Write an Instructor class extending Lambdasian.
     - Its constructor takes a single argument - an object with the following keys:
